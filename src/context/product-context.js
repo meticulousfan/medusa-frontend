@@ -7,7 +7,7 @@ const actions = {
 
 export const defaultProductContext = {
   variantId: null,
-  quantity: 1,
+  quantity: 0,
   selectVariant: _ => {},
   updateQuantity: () => {},
   dispatch: () => {},

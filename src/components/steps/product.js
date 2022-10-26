@@ -6,7 +6,7 @@ import ProductSelection from "../product-selection"
 import Spinner from "../spinner/spinner"
 
 const Product = ({
-  product,
+  products,
   regions,
   country,
   region,
@@ -24,7 +24,10 @@ const Product = ({
   }
 
   return (
-    <Flex variant="layout.stepContainer" sx={{ position: "relative" }}>
+    <Flex
+      variant="layout.stepContainer"
+      sx={{ position: "relative", width: "100vw" }}
+    >
       {loading && (
         <Flex
           sx={{
@@ -48,15 +51,15 @@ const Product = ({
             region={region}
             regions={regions}
             country={country}
-            product={product}
-            nextStep={() => setActiveStep("shipping")}
+            products={products}
+            nextStep={() => setActiveStep("payment")}
             setLoading={setLoading}
           />
         </Card>
       ) : (
         <Card
-          variant="accordionTrigger"
-          onClick={() => setActiveStep("product")}
+          variant="container"
+          onClick={() => setActiveStep("payment")}
           sx={triggerStyles}
         >
           Product

@@ -50,7 +50,7 @@ const IndexPage = ({ product }) => {
               sx={{
                 my: "16px",
               }}
-              onClick={() => router.push(`/${product.handle}`)}
+              onClick={() => router.push(`/dashboard`)}
             >
               Explore the demo
             </Button>

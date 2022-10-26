@@ -5,20 +5,21 @@ import OptionSelector from "./option-selector"
 
 const ProductDisplay = ({ region, product }) => {
   return product ? (
-    <Flex sx={{ flexDirection: "column" }}>
-      <Flex sx={{ flexDirection: "row", width: "100%", height: "100%" }}>
-        <Image
-          sx={{
-            width: "50%",
-            borderRadius: "4px",
-            objectFit: "contain",
-            objectPosition: "center center",
-          }}
-          src={product.thumbnail}
-          alt={product.title}
-        />
-        <Info product={product} region={region} />
-      </Flex>
+    <Flex
+      sx={{ flexDirection: "row", justifyContent: "flex-start", width: "100%" }}
+    >
+      <Image
+        sx={{
+          width: "96px",
+          height: "96px",
+          borderRadius: "4px",
+          objectFit: "contain",
+          objectPosition: "center center",
+        }}
+        src={product.thumbnail}
+        alt={product.title}
+      />
+      <Info product={product} region={region} />
       <Text
         sx={{
           mt: "16px",

@@ -5,7 +5,7 @@ import ProductContext from "../../context/product-context"
 import ProductDisplay from "./product-display"
 
 const ProductSelection = ({
-  product,
+  products,
   region,
   country,
   nextStep,
@@ -36,12 +36,19 @@ const ProductSelection = ({
   return (
     <Box>
       <Text variant="header3">Product</Text>
-      <Flex sx={{ mt: "16px", justifyContent: "center" }}>
-        <ProductDisplay region={region} product={product} />
+      <Flex
+        sx={{ mt: "16px", justifyContent: "center", flexDirection: "column" }}
+      >
+        {products?.map(
+          (product, index) =>
+            index < 1 && (
+              <ProductDisplay key={index} region={region} product={product} />
+            )
+        )}
       </Flex>
       <Divider sx={{ color: "#E5E7EB", my: "16px" }} />
       <Button sx={{}} onClick={() => handleSubmit()} variant="cta">
-        Continue
+        Check out
       </Button>
     </Box>
   )

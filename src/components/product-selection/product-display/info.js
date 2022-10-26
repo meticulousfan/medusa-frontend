@@ -8,8 +8,6 @@ const Info = ({ product, region }) => {
       sx={{
         flexDirection: "column",
         justifyContent: "center",
-        width: "50%",
-        height: "100%",
         px: "16px",
       }}
     >

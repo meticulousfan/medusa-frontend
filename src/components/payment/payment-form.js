@@ -28,16 +28,16 @@ const PaymentForm = ({ session, handleSubmit, setLoading }) => {
         payment_method: {
           card: elements.getElement(CardElement),
           billing_details: {
-            name: address.fullName,
-            email: email,
-            phone: address.phone,
-            address: {
-              city: address.city,
-              country: address.country,
-              line1: address.line1,
-              line2: address.line2,
-              postal_code: address.postal,
-            },
+            // name: address.fullName,
+            // email: email,
+            // phone: address.phone,
+            // address: {
+            //   city: address.city,
+            //   country: address.country,
+            //   line1: address.line1,
+            //   line2: address.line2,
+            //   postal_code: address.postal,
+            // },
           },
         },
       })

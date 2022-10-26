@@ -5,14 +5,16 @@ import React, { useMemo } from "react"
 import PaymentForm from "./payment-form"
 
 const STRIPE_KEY = process.env.NEXT_PUBLIC_STRIPE_API_KEY || ""
-const stripePromise = loadStripe(STRIPE_KEY)
+const stripePromise = loadStripe(
+  "pk_test_51GzsAWCZrJ5XDKMLza824WsFaw4z50FQtjSlykRoHVDV7Ej2dTkLmCxLb70036H6izFTXxEDNui8fhj3qcitCFbS00G7galx4r"
+)
 
 const Payment = ({ handleSubmit, setLoading }) => {
   const { cart } = useCart()
 
   const stripeSession = useMemo(() => {
     if (cart.payment_sessions) {
-      return cart.payment_sessions.find(s => s.provider_id === "stripe")
+      return cart.payment_sessions.find(s => s.provider_id === "manual")
     }
 
     return null
@@ -23,7 +25,8 @@ const Payment = ({ handleSubmit, setLoading }) => {
   }
 
   const options = {
-    client_secret: stripeSession.data.client_secret,
+    client_secret:
+      "pi_3Lx2P4CZrJ5XDKML0RAnt9VM_secret_jJbwcR561jlJj6hMZ2JFrYqf2",
   }
 
   return (
